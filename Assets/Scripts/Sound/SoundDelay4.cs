@@ -11,7 +11,7 @@ public class SoundDelay4 : MonoBehaviour
 
     IEnumerator TimeSoundDelay4()
     {
-        while (true)
+        while (GetComponent<MeshRenderer>().enabled == false)
         {
             yield return new WaitForSeconds(12);
             FindObjectOfType<AudioManager4>().Play("SoundSoul4");
@@ -22,8 +22,11 @@ public class SoundDelay4 : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Destroy");
-            Destroy(gameObject);
+            GetComponent<MeshRenderer>().enabled = true;
+            FindObjectOfType<AudioManager4>().Play("Disintegrate");
+            gameObject.GetComponent<SphereCollider>().enabled = false;
+            //FindObjectOfType<AudioManager4>().Stop("SoundSoul4");
+            //Destroy(gameObject, 3);
         }
     }
 }

@@ -11,9 +11,9 @@ public class SoundDelay3 : MonoBehaviour
 
     IEnumerator TimeSoundDelay3()
     {
-        while (true)
+        while (GetComponent<MeshRenderer>().enabled == false)
         {
-            yield return new WaitForSeconds(8);
+            yield return new WaitForSeconds(9);
             FindObjectOfType<AudioManager3>().Play("SoundSoul3");
         }
     }
@@ -22,8 +22,11 @@ public class SoundDelay3 : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Destroy");
-            Destroy(gameObject);
+            GetComponent<MeshRenderer>().enabled = true;
+            FindObjectOfType<AudioManager3>().Play("Disintegrate");
+            gameObject.GetComponent<SphereCollider>().enabled = false;
+            //FindObjectOfType<AudioManager3>().Stop("SoundSoul3");
+            //Destroy(gameObject, 3);
         }
     }
 }

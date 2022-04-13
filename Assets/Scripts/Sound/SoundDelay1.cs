@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class SoundDelay1 : MonoBehaviour
 {
+    AudioManager1 audioManager1;
     void Start()
     {
         StartCoroutine(TimeSoundDelay1());
+        GetComponent<MeshRenderer>().enabled = false;
+        audioManager1 = GetComponent<AudioManager1>();
+        
     }
 
     IEnumerator TimeSoundDelay1()
@@ -14,20 +18,25 @@ public class SoundDelay1 : MonoBehaviour
         /*yield return new WaitForSeconds(3);
         FindObjectOfType<AudioManager>().Play("SoundSoul4");*/
 
-        while(true)
+        while(GetComponent<MeshRenderer>().enabled == false)
         {
-            yield return new WaitForSeconds(4);
+            yield return new WaitForSeconds(3);
             FindObjectOfType<AudioManager1>().Play("SoundSoul1");
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Destroy");
-            Destroy(gameObject);
             GetComponent<MeshRenderer>().enabled = true;
+            FindObjectOfType<AudioManager1>().Play("Disintegrate");
+            gameObject.GetComponent<SphereCollider>().enabled = false;
+            //FindObjectOfType<AudioManager1>().Stop("SoundSoul1");
+            //audioManager1.Stop("SoundSoul1");
+            //audioManager1.enabled = false;
+            //this.enabled = false;
+            //Destroy(gameObject, 3);
         }
     }
 }

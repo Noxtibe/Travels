@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ExitGame : MonoBehaviour
+public class ReturnToMainMenu : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Application.Quit();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
