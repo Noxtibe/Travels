@@ -27,6 +27,7 @@ public class SoundDelay1 : MonoBehaviour
         {
             Debug.Log("Destroy");
             Destroy(gameObject);
+            GetComponent<MeshRenderer>().enabled = true;
         }
     }
 }
