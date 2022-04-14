@@ -15,6 +15,10 @@ public class ThirdPersonMovements : MonoBehaviour
     float turnSmoothVelocity;
     public float turnSmoothTime = 0.1f;
 
+    private void Start()
+    {
+        Cursor.visible = false;
+    }
     void Update()
     {
 
