@@ -117,7 +117,7 @@ MonoBehaviour:
     m_Value: 3
   skyAmbientMode:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   fogType:
     m_OverrideState: 0
     m_Value: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   - {fileID: -6439866563956119037}
   - {fileID: 2131270756487576304}
   - {fileID: -1648061762757164726}
-  - {fileID: 7449491100233032516}
+  - {fileID: 4840998650267007968}
 --- !u!114 &2131270756487576304
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -157,7 +157,7 @@ MonoBehaviour:
     m_Value: 0.114
     min: 0.001
     max: 1
---- !u!114 &7449491100233032516
+--- !u!114 &4840998650267007968
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,7 +181,7 @@ MonoBehaviour:
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   multiplier:
     m_OverrideState: 0
     m_Value: 1
@@ -200,7 +200,7 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0
   updatePeriod:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
     min: 0
   includeSunInBaking:
@@ -226,4 +226,4 @@ MonoBehaviour:
     showEyeDropper: 1
   gradientDiffusion:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
